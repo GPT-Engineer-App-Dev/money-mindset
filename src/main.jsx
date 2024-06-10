@@ -8,10 +8,20 @@ const colors = {
     900: "#1a365d",
     800: "#153e75",
     700: "#2a69ac",
+    600: "#f3f2ef", // Add this line for the new background color
   },
 };
 
-const theme = extendTheme({ colors });
+const theme = extendTheme({
+  colors,
+  styles: {
+    global: {
+      "html, body": {
+        bg: "brand.600", // Apply the new background color globally
+      },
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
